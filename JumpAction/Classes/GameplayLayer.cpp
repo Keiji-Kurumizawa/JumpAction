@@ -62,7 +62,7 @@ bool GameplayLayer::init()
     //回転しない
     body->setRotationEnable(false);
     //重力の影響
-    body->setGravityEnable(false);
+    body->setGravityEnable(true);
     //衝突
     body->setContactTestBitmask(true);
     //撃力
@@ -72,8 +72,8 @@ bool GameplayLayer::init()
     player->setPhysicsBody(body);
     
     //キャラクターの移動
-    auto move = MoveTo::create(5, Vec2(800, 110));
-    player->runAction(move);
+    //auto move = MoveTo::create(10, Vec2(800, 110));
+    //player->runAction(move);
     
     //キャラクターのジャンプ
     //auto taplistener = EventListenerTouchAllAtOnce::create();
@@ -85,7 +85,7 @@ bool GameplayLayer::init()
     
     //ジャンプ仮設定
     auto menuItemPlay = MenuItemImage::create("Charactor.png", "Charactor.png", [this,player](Ref* sender){
-        player->getPhysicsBody()->applyImpulse(Vect(0,180.0f), Point(0, player->getContentSize().height));
+        player->getPhysicsBody()->applyImpulse(Vect(0,220.0f), Point(0, player->getContentSize().height));
         return;
     });
     auto menu = Menu::create(menuItemPlay, NULL);

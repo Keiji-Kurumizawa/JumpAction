@@ -12,7 +12,7 @@
 using namespace cocos2d;
 
 //地面の高さ
-const float Global::g_groundHeight = 110;
+const float Global::g_groundHeight = 97;
 
 //プレイヤーの最初のX座標
-const float Global::g_playerStartX = 100;
+const float Global::g_playerStartX = 200;

@@ -70,6 +70,8 @@ bool PlayScene::initPhysics()
     ground->setAnchorPoint(Vec2::ZERO);
     //位置
     ground->setPosition(Vec2::ZERO);
+    //左右方向に大きなサイズにする
+    ground->setContentSize(Size(10000000, Global::g_groundHeight * 2));
     
     //マテリアルの作成
     auto material = PHYSICSBODY_MATERIAL_DEFAULT;

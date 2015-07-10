@@ -55,9 +55,8 @@ bool BackgroundLayer::init()
     addChild(map2);
     
     //横スクロール
-    //auto move = MoveTo::create(5, Vec2(-800, 0));
-    //map1->runAction(move);
-    //this->addChild(map1);
+    auto move = MoveTo::create(10, Vec2(-1600, 0));
+    map1->runAction(move);
     
     return true;
 }

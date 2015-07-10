@@ -24,6 +24,7 @@ public:
     
     CREATE_FUNC(GameplayLayer);
     
+    
     //タッチ開始
     //void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event);
 };
