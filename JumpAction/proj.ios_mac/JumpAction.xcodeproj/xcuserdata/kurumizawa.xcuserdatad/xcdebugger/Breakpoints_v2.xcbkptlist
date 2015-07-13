@@ -38,32 +38,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/BackgroundLayer.cpp"
-            timestampString = "458447601.697325"
+            filePath = "../Classes/PlayScene.cpp"
+            timestampString = "458468724.155614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/BackgroundLayer.cpp"
-            timestampString = "458448711.244335"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "PlayScene::onCollisionBegin(cocos2d::PhysicsContact &amp;contact)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

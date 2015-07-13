@@ -72,16 +72,9 @@ bool GameplayLayer::init()
     player->setPhysicsBody(body);
     
     //キャラクターの移動
-    //auto move = MoveTo::create(10, Vec2(800, 110));
-    //player->runAction(move);
-    
-    //キャラクターのジャンプ
-    //auto taplistener = EventListenerTouchAllAtOnce::create();
-    //taplistener->onTouchesBegan = [this,player](const std::vector<cocos2d::Touch*> &touches, cocos2d::Event *event)
-    //{
-        //player->getPhysicsBody()->applyImpulse(Vect(0,180.0f), Point(0, player->getContentSize().height));
-        //return;
-    //};
+    //auto move = MoveTo::create(8, Vec2(700, 110));
+    auto move = MoveBy::create(8, Vec2(900, 110));
+    player->runAction(move);
     
     //ジャンプ仮設定
     auto menuItemPlay = MenuItemImage::create("Charactor.png", "Charactor.png", [this,player](Ref* sender){
@@ -93,5 +86,17 @@ bool GameplayLayer::init()
     
     addChild(player, 0);
     
+    this->scheduleUpdate();
+    
     return true;
+}
+
+void GameplayLayer::update(float delta)
+{
+    //ここにプレイヤー移動処理を加える
+    //プレイヤーの移動設定
+    //if(player->getPositionX() > 800)
+    //{
+    //    player->setPosition(Vec2(0, Global::g_groundHeight));
+    //}
 }

@@ -34,7 +34,7 @@ bool Rock::init(Layer* layer, float posX)
         return false;
     }
     
-    sprite = Sprite::create();
+    sprite = Sprite::create("rock.png");
     sprite->setTag(TagOfSprite::ROCK_SPRITE);
     
     auto constentSize = sprite->getContentSize();

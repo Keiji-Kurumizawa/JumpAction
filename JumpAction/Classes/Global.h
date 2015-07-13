@@ -18,7 +18,7 @@ enum TagOfLayer
 };
 enum TagOfSprite
 {
-    ROCK_SPRITE = 1
+    ROCK_SPRITE = 0
 };
 class Global
 {

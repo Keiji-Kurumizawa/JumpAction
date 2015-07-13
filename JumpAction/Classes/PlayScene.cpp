@@ -27,7 +27,7 @@ Scene* PlayScene::createScene()
     world->setGravity(Vec2(0, -350));
     
     /* デバック */
-    //world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     /* デバック */
     
     // 'layer' はautoreleaseオブジェクト

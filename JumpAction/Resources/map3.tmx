@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="10" tilewidth="32" tileheight="32" nextobjectid="27">
+ <tileset firstgid="1" name="map1" tilewidth="32" tileheight="32">
+  <image source="map.png" width="480" height="256"/>
+ </tileset>
+ <layer name="ground" width="50" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQE8gMIpHMQ0wABe1CWE=
+  </data>
+ </layer>
+ <layer name="collision" width="50" height="10" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjGTgQqYcMfKE1FHLfEJqh5I/RsEoIBcAAOs3AzE=
+  </data>
+ </layer>
+ <objectgroup name="rock">
+  <object id="15" x="248" y="212"/>
+  <object id="20" x="248" y="187"/>
+  <object id="21" x="416" y="189"/>
+  <object id="22" x="416" y="214"/>
+  <object id="23" x="576" y="189"/>
+  <object id="24" x="576" y="214"/>
+ </objectgroup>
+</map>

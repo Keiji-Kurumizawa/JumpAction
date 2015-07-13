@@ -33,7 +33,7 @@ bool BackgroundLayer::init()
     }
     
     //マップファイル1
-    map1 = TMXTiledMap::create("map1.tmx");
+    map1 = TMXTiledMap::create("map3.tmx");
     map1->setAnchorPoint(Vec2::ZERO);
     map1->setPosition(Vec2::ZERO);
     addChild(map1);
@@ -43,18 +43,18 @@ bool BackgroundLayer::init()
     mapWidth = map1Size.width;
     
     //マップファイル2
-    map2 = TMXTiledMap::create("map2.tmx");
+    map2 = TMXTiledMap::create("map3.tmx");
     //マップ2をマップ1の右隣に設定
     map2->setPosition(mapWidth, 0);
     addChild(map2);
     
-    //横スクロール
-    auto move = MoveTo::create(10, Vec2(-800, 0));
-    map1->runAction(move);
-    //map2->runAction(move);
+    loadObjects(map1, 0);
+    //loadObjects(map2, 1);
     
-    loadObjects(map1, 1);
-    loadObjects(map2, 1);
+    //横スクロール
+    //auto move = MoveTo::create(10, Vec2(-800, 0));
+    //map1->runAction(move);
+    //map2->runAction(move);
     
     return true;
 }
@@ -78,7 +78,5 @@ void BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)
         rock->setMapIndex(mapIndex);
         //岩オブジェクトをリストに追加
         objects.pushBack(rock);
-
     }
-    
 }

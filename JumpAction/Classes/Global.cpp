@@ -15,4 +15,4 @@ using namespace cocos2d;
 const float Global::g_groundHeight = 97;
 
 //プレイヤーの最初のX座標
-const float Global::g_playerStartX = 200;
+const float Global::g_playerStartX = 0;

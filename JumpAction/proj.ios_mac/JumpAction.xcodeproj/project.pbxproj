@@ -17,6 +17,8 @@
 		463D4B581B4FC00A00F7EAF8 /* Charactor.png in Resources */ = {isa = PBXBuildFile; fileRef = 463D4B571B4FC00A00F7EAF8 /* Charactor.png */; };
 		467960B81B4F51E80074AEC9 /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467960B61B4F51E80074AEC9 /* Global.cpp */; };
 		4681CF331B53550400AC2C2B /* Rock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4681CF311B53550400AC2C2B /* Rock.cpp */; };
+		4681CF351B53835200AC2C2B /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 4681CF341B53835200AC2C2B /* rock.png */; };
+		4681CF371B538C2B00AC2C2B /* map3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4681CF361B538C2B00AC2C2B /* map3.tmx */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
@@ -125,6 +127,8 @@
 		467960B71B4F51E80074AEC9 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		4681CF311B53550400AC2C2B /* Rock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rock.cpp; sourceTree = "<group>"; };
 		4681CF321B53550400AC2C2B /* Rock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rock.h; sourceTree = "<group>"; };
+		4681CF341B53835200AC2C2B /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
+		4681CF361B538C2B00AC2C2B /* map3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map3.tmx; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4681CF361B538C2B00AC2C2B /* map3.tmx */,
+				4681CF341B53835200AC2C2B /* rock.png */,
 				463D4B571B4FC00A00F7EAF8 /* Charactor.png */,
 				46C41D1F1B4E66D6007B4068 /* chara.png */,
 				46C41D1D1B4E638B007B4068 /* map2.tmx */,
@@ -441,7 +447,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = 2XMMD3388R;
 					};
 				};
 			};
@@ -498,6 +504,7 @@
 				46C41D1B1B4E60E5007B4068 /* map.png in Resources */,
 				46C41D091B4E2691007B4068 /* title.png in Resources */,
 				46C41D1C1B4E60E5007B4068 /* map1.tmx in Resources */,
+				4681CF371B538C2B00AC2C2B /* map3.tmx in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -519,6 +526,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				4681CF351B53835200AC2C2B /* rock.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				46C41D1E1B4E638B007B4068 /* map2.tmx in Resources */,
 				46C41D201B4E66D6007B4068 /* chara.png in Resources */,
@@ -589,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jun sasaki (PVX53G7BS2)";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -614,6 +622,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "f5f2ef0c-e026-4f24-ad12-7cb043be1790";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -625,7 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jun sasaki (PVX53G7BS2)";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -648,6 +657,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "f5f2ef0c-e026-4f24-ad12-7cb043be1790";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
