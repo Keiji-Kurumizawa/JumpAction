@@ -16,7 +16,10 @@ enum TagOfLayer
     BACKGROUND_LAYER = 0,
     GAMEPLAY_LAYER = 1
 };
-
+enum TagOfSprite
+{
+    ROCK_SPRITE = 1
+};
 class Global
 {
 public:

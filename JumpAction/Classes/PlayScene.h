@@ -23,6 +23,8 @@ public:
     CREATE_FUNC(PlayScene);
     
     bool initPhysics();
+    
+    bool onCollisionBegin(cocos2d::PhysicsContact &contact);
 };
 
 #endif // __PLAY_SCENE_H__

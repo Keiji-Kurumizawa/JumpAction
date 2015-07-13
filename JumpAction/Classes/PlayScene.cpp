@@ -50,12 +50,15 @@ bool PlayScene::init()
     //物理エンジン初期化
     initPhysics();
     
-//    //レイヤー追加
+    //レイヤー追加(BackGround)
     auto backgroundLayer = BackgroundLayer::createScene();
     addChild(backgroundLayer);
-//
+    backgroundLayer->setTag(TagOfLayer::BACKGROUND_LAYER);
+
+    //レイヤー追加(BackGround)
     auto gameplayLayer = GameplayLayer::createScene();
     addChild(gameplayLayer);
+    gameplayLayer->setTag(TagOfLayer::GAMEPLAY_LAYER);
     
     return true;
 }
@@ -91,5 +94,35 @@ bool PlayScene::initPhysics()
     //剛体の設定
     ground->setPhysicsBody(body);
     
+    //プレイヤーとオブジェクトとの衝突判定を作成
+    auto collisionCoinListener = EventListenerPhysicsContact::create();
+    collisionCoinListener->onContactBegin = CC_CALLBACK_1(PlayScene::onCollisionBegin, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(collisionCoinListener, this);
+    
+    
+    return true;
+}
+
+bool PlayScene::onCollisionBegin(cocos2d::PhysicsContact &contact)
+{
+    //一つ目の衝突形状を取得する
+    auto shapeA = contact.getShapeA();
+    auto nodeA = shapeA->getBody()->getNode();
+    
+    //二つ目の衝突形状を取得
+    auto shapeB = contact.getShapeB();
+    auto nodeB = shapeB->getBody()->getNode();
+    
+    if(nodeA->getTag() < 0 || nodeB->getTag() < 0)
+    {
+        //タグが付与されていなければ、衝突判定の必要がないもの。判定を行わない。
+        return true;
+    }
+    
+    else if(nodeA->getTag() == TagOfSprite::ROCK_SPRITE
+        ||  nodeB->getTag() == TagOfSprite::ROCK_SPRITE)
+    {
+        log("==gameover");
+    }
     return true;
 }
