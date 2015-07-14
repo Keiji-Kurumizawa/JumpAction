@@ -26,7 +26,8 @@ public:
     
     //定期更新
     void update(float delta);
-    
+    //タッチイベント
+    bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
 };
 
 #endif // __GAME_PLAY_LAYER_H__

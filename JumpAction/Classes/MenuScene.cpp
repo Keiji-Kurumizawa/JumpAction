@@ -8,6 +8,7 @@
 #include "MenuScene.h"
 #include "PlayScene.h"
 #include "BackgroundLayer.h"
+#include "GameOverLayer.h"
 
 USING_NS_CC;
 
@@ -49,7 +50,10 @@ bool MenuScene::init()
     
     //メニューアイテムの作成
     auto menuItemPlay = MenuItemImage::create("Charactor.png", "Charactor.png", [this](Ref* sender){
-        Director::getInstance()->replaceScene(PlayScene::createScene());
+        //プレイ用
+        //Director::getInstance()->replaceScene(PlayScene::createScene());
+        //ゲームオーバー用
+        Director::getInstance()->replaceScene(GameOverLayer::createScene());
     });
     
     auto menu = Menu::create(menuItemPlay, NULL);

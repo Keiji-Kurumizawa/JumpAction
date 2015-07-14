@@ -15,6 +15,8 @@
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		463D4B581B4FC00A00F7EAF8 /* Charactor.png in Resources */ = {isa = PBXBuildFile; fileRef = 463D4B571B4FC00A00F7EAF8 /* Charactor.png */; };
+		46407C101B54971B00DED57B /* GameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46407C0E1B54971B00DED57B /* GameOverLayer.cpp */; };
+		46407C121B549EDA00DED57B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 46407C111B549EDA00DED57B /* back.png */; };
 		467960B81B4F51E80074AEC9 /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467960B61B4F51E80074AEC9 /* Global.cpp */; };
 		4681CF331B53550400AC2C2B /* Rock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4681CF311B53550400AC2C2B /* Rock.cpp */; };
 		4681CF351B53835200AC2C2B /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 4681CF341B53835200AC2C2B /* rock.png */; };
@@ -123,6 +125,9 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		463D4B571B4FC00A00F7EAF8 /* Charactor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Charactor.png; sourceTree = "<group>"; };
+		46407C0E1B54971B00DED57B /* GameOverLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverLayer.cpp; sourceTree = "<group>"; };
+		46407C0F1B54971B00DED57B /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		46407C111B549EDA00DED57B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		467960B61B4F51E80074AEC9 /* Global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Global.cpp; sourceTree = "<group>"; };
 		467960B71B4F51E80074AEC9 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		4681CF311B53550400AC2C2B /* Rock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rock.cpp; sourceTree = "<group>"; };
@@ -310,6 +315,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46407C111B549EDA00DED57B /* back.png */,
 				4681CF361B538C2B00AC2C2B /* map3.tmx */,
 				4681CF341B53835200AC2C2B /* rock.png */,
 				463D4B571B4FC00A00F7EAF8 /* Charactor.png */,
@@ -347,6 +353,8 @@
 				467960B71B4F51E80074AEC9 /* Global.h */,
 				4681CF311B53550400AC2C2B /* Rock.cpp */,
 				4681CF321B53550400AC2C2B /* Rock.h */,
+				46407C0E1B54971B00DED57B /* GameOverLayer.cpp */,
+				46407C0F1B54971B00DED57B /* GameOverLayer.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -511,6 +519,7 @@
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				46407C121B549EDA00DED57B /* back.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				463D4B581B4FC00A00F7EAF8 /* Charactor.png in Resources */,
@@ -562,6 +571,7 @@
 				4681CF331B53550400AC2C2B /* Rock.cpp in Sources */,
 				467960B81B4F51E80074AEC9 /* Global.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				46407C101B54971B00DED57B /* GameOverLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				46C41D0E1B4E44FC007B4068 /* PlayScene.cpp in Sources */,
 			);

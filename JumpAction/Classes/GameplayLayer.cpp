@@ -88,6 +88,12 @@ bool GameplayLayer::init()
     
     this->scheduleUpdate();
     
+    //ジャンプ仮設定2
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+    listener->onTouchBegan = CC_CALLBACK_2(GameplayLayer::onTouchBegan, this);
+    getEventDispatcher()->addEventListenerWithFixedPriority(listener, 100);
+    
     return true;
 }
 
@@ -99,4 +105,9 @@ void GameplayLayer::update(float delta)
     //{
     //    player->setPosition(Vec2(0, Global::g_groundHeight));
     //}
+}
+
+bool GameplayLayer::onTouchBegan(Touch *pTouch, Event *event)
+{
+    return false;
 }
