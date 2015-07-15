@@ -49,11 +49,8 @@ bool MenuScene::init()
     addChild(spritebg);
     
     //メニューアイテムの作成
-    auto menuItemPlay = MenuItemImage::create("Charactor.png", "Charactor.png", [this](Ref* sender){
-        //プレイ用
-        //Director::getInstance()->replaceScene(PlayScene::createScene());
-        //ゲームオーバー用
-        Director::getInstance()->replaceScene(GameOverLayer::createScene());
+    auto menuItemPlay = MenuItemImage::create("start.png", "start.png", [this](Ref* sender){
+        Director::getInstance()->replaceScene(PlayScene::createScene());
     });
     
     auto menu = Menu::create(menuItemPlay, NULL);

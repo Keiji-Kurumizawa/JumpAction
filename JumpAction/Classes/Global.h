@@ -27,6 +27,8 @@ public:
     static const float g_groundHeight;
     //プレイヤーの最初のX座標
     static const float g_playerStartX;
+    //ステージ横
+    static const float g_stageWidth;
     
 
 };

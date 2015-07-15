@@ -41,11 +41,11 @@ bool GameplayLayer::init()
     }
     
     //キャラクターのスプライト作成
-    auto player = Sprite::create("chara.png");
+    player = Sprite::create("chara.png");
     //キャラクターサイズ取得
     auto playerSize = player->getContentSize();
     //キャラクター位置設定
-    player->setPosition(Vec2(Global::g_playerStartX, Global::g_groundHeight));
+    player->setPosition(Vec2(Global::g_playerStartX, Global::g_groundHeight + playerSize.height / 2.0f));
     
     //マテリアル作成
     auto material = PHYSICSBODY_MATERIAL_DEFAULT;
@@ -72,13 +72,17 @@ bool GameplayLayer::init()
     player->setPhysicsBody(body);
     
     //キャラクターの移動
-    //auto move = MoveTo::create(8, Vec2(700, 110));
-    auto move = MoveBy::create(8, Vec2(900, 110));
-    player->runAction(move);
+    auto move = MoveBy::create(second, Vec2(100, 0));
+    auto seq = Sequence::create(move, NULL);
+    auto repeat = RepeatForever::create(seq);
+    player->runAction(repeat);
     
-    //ジャンプ仮設定
-    auto menuItemPlay = MenuItemImage::create("Charactor.png", "Charactor.png", [this,player](Ref* sender){
-        player->getPhysicsBody()->applyImpulse(Vect(0,220.0f), Point(0, player->getContentSize().height));
+    //ジャンプ設定
+    auto menuItemPlay = MenuItemImage::create("jump.png", "jump.png", [this](Ref* sender){
+        if(player->getPositionY() <= Global::g_groundHeight + player->getContentSize().height / 2.0f)
+        {
+            player->getPhysicsBody()->applyImpulse(Vect(0,200.0f), Point(0, player->getContentSize().height));
+        }
         return;
     });
     auto menu = Menu::create(menuItemPlay, NULL);
@@ -86,28 +90,21 @@ bool GameplayLayer::init()
     
     addChild(player, 0);
     
-    this->scheduleUpdate();
-    
-    //ジャンプ仮設定2
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->setSwallowTouches(true);
-    listener->onTouchBegan = CC_CALLBACK_2(GameplayLayer::onTouchBegan, this);
-    getEventDispatcher()->addEventListenerWithFixedPriority(listener, 100);
+    scheduleUpdate();
     
     return true;
 }
 
 void GameplayLayer::update(float delta)
 {
-    //ここにプレイヤー移動処理を加える
     //プレイヤーの移動設定
-    //if(player->getPositionX() > 800)
-    //{
-    //    player->setPosition(Vec2(0, Global::g_groundHeight));
-    //}
-}
-
-bool GameplayLayer::onTouchBegan(Touch *pTouch, Event *event)
-{
-    return false;
+    if(player->getPositionX() > Global::g_stageWidth)
+    {
+        player->setPosition(Vec2(Global::g_playerStartX, player->getPositionY()));
+        
+        auto move = MoveBy::create(second, Vec2(15, 0));
+        auto seq = Sequence::create(move, NULL);
+        auto repeat = RepeatForever::create(seq);
+        player->runAction(repeat);
+    }
 }

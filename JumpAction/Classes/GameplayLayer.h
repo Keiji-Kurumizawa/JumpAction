@@ -14,20 +14,19 @@
 
 class GameplayLayer : public cocos2d::Layer
 {
+    float second = 1.0f;
 public:
     // cppにはidがないので、クラスのインスタンスのポインタ返し
     static cocos2d::Scene* createScene();
     
     virtual bool init();
     
-    float getEyeX();
-    
     CREATE_FUNC(GameplayLayer);
     
     //定期更新
     void update(float delta);
-    //タッチイベント
-    bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
+    
+    cocos2d::Sprite* player;
 };
 
 #endif // __GAME_PLAY_LAYER_H__

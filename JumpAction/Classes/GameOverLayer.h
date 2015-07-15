@@ -18,6 +18,7 @@ public:
     static cocos2d::Scene *createScene();
     CREATE_FUNC(GameOverLayer);
     
+    void onTitle(Ref* pSender);
     void onRestart(Ref* pSender);
 };
 

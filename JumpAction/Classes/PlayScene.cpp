@@ -9,6 +9,7 @@
 #include "PlayScene.h"
 #include "BackgroundLayer.h"
 #include "GameplayLayer.h"
+#include "GameOverLayer.h"
 #include "Global.h"
 
 using namespace cocos2d;
@@ -27,7 +28,7 @@ Scene* PlayScene::createScene()
     world->setGravity(Vec2(0, -350));
     
     /* デバック */
-    world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    //world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     /* デバック */
     
     // 'layer' はautoreleaseオブジェクト
@@ -74,7 +75,7 @@ bool PlayScene::initPhysics()
     //位置
     ground->setPosition(Vec2::ZERO);
     //左右方向に大きなサイズにする
-    ground->setContentSize(Size(10000000, Global::g_groundHeight * 2));
+    ground->setContentSize(Size(100000, Global::g_groundHeight * 2));
     
     //マテリアルの作成
     auto material = PHYSICSBODY_MATERIAL_DEFAULT;
@@ -113,7 +114,7 @@ bool PlayScene::onCollisionBegin(cocos2d::PhysicsContact &contact)
     auto shapeB = contact.getShapeB();
     auto nodeB = shapeB->getBody()->getNode();
     
-    if(nodeA->getTag() < 0 || nodeB->getTag() < 0)
+    if(nodeA->getTag() < 0 && nodeB->getTag() < 0)
     {
         //タグが付与されていなければ、衝突判定の必要がないもの。判定を行わない。
         return true;
@@ -122,7 +123,14 @@ bool PlayScene::onCollisionBegin(cocos2d::PhysicsContact &contact)
     else if(nodeA->getTag() == TagOfSprite::ROCK_SPRITE
         ||  nodeB->getTag() == TagOfSprite::ROCK_SPRITE)
     {
-        log("==gameover");
+        //ディレクタの取得
+        auto director = Director::getInstance();
+        //再開
+        director->pause();
+        //ゲームオーバーを作成
+        auto gameOverLayer = GameOverLayer::create();
+        //ゲームオーバーをシーンに追加
+        addChild(gameOverLayer);
     }
     return true;
 }
