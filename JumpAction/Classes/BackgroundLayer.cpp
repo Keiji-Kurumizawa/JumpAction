@@ -57,6 +57,7 @@ void BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)
         ValueMap objectInfo = object.asValueMap();
         //岩オブジェクト作成
         auto rock = Rock::create(this, objectInfo.at("x").asFloat() + mapWidth * mapIndex);
+        
         //岩オブジェクトのマップインデックスを設定
         rock->setMapIndex(mapIndex);
         //岩オブジェクトをリストに追加

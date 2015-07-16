@@ -28,7 +28,7 @@ Scene* PlayScene::createScene()
     world->setGravity(Vec2(0, -350));
     
     /* デバック */
-    //world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     /* デバック */
     
     // 'layer' はautoreleaseオブジェクト
@@ -56,7 +56,7 @@ bool PlayScene::init()
     addChild(backgroundLayer);
     backgroundLayer->setTag(TagOfLayer::BACKGROUND_LAYER);
 
-    //レイヤー追加(BackGround)
+    //レイヤー追加
     auto gameplayLayer = GameplayLayer::createScene();
     addChild(gameplayLayer);
     gameplayLayer->setTag(TagOfLayer::GAMEPLAY_LAYER);
@@ -75,7 +75,7 @@ bool PlayScene::initPhysics()
     //位置
     ground->setPosition(Vec2::ZERO);
     //左右方向に大きなサイズにする
-    ground->setContentSize(Size(100000, Global::g_groundHeight * 2));
+    ground->setContentSize(Size(10000, Global::g_groundHeight * 2));
     
     //マテリアルの作成
     auto material = PHYSICSBODY_MATERIAL_DEFAULT;

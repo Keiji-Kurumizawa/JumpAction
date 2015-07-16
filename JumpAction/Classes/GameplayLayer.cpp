@@ -66,7 +66,7 @@ bool GameplayLayer::init()
     //衝突
     body->setContactTestBitmask(true);
     //撃力
-    body->applyImpulse(Vect(0, 0), Point(0, 0));
+    body->applyImpulse(Vect(100, 0), Point(0, 0));
     
     //剛体の設定
     player->setPhysicsBody(body);
@@ -75,7 +75,7 @@ bool GameplayLayer::init()
     auto move = MoveBy::create(second, Vec2(100, 0));
     auto seq = Sequence::create(move, NULL);
     auto repeat = RepeatForever::create(seq);
-    player->runAction(repeat);
+    //player->runAction(repeat);
     
     //ジャンプ設定
     auto menuItemPlay = MenuItemImage::create("jump.png", "jump.png", [this](Ref* sender){
@@ -105,6 +105,6 @@ void GameplayLayer::update(float delta)
         auto move = MoveBy::create(second, Vec2(15, 0));
         auto seq = Sequence::create(move, NULL);
         auto repeat = RepeatForever::create(seq);
-        player->runAction(repeat);
+        //player->runAction(repeat);
     }
 }
