@@ -11,11 +11,12 @@
 
 using namespace cocos2d;
 
-Rock* Rock::create(Layer* layer, float posX)
+Rock* Rock::create(float posX)
 {
     Rock* pRet = new Rock();
-    if(pRet && pRet->init(layer, posX))
+    if(pRet && pRet->initWithFile("rock.png"))
     {
+        pRet->init(posX);
         pRet->autorelease();
         return pRet;
     }
@@ -27,19 +28,22 @@ Rock* Rock::create(Layer* layer, float posX)
     }
 }
 
-bool Rock::init(Layer* layer, float posX)
+bool Rock::initWithFile(const std::string& filename) {
+    return Sprite::initWithFile(filename);
+}
+
+bool Rock::init(float posX)
 {
     if(!Node::init())
     {
         return false;
     }
     
-    sprite = Sprite::create("rock.png");
-    sprite->setTag(TagOfSprite::ROCK_SPRITE);
+    setTag(TagOfSprite::ROCK_SPRITE);
     
-    auto constentSize = sprite->getContentSize();
+    auto constentSize = getContentSize();
     
-    sprite->setPosition(posX, constentSize.height / 2 + Global::g_groundHeight);
+    setPosition(posX, constentSize.height / 2 + Global::g_groundHeight);
     
     //マテリアル設定
     auto material = PHYSICSBODY_MATERIAL_DEFAULT;
@@ -60,10 +64,7 @@ bool Rock::init(Layer* layer, float posX)
     body->setDynamic(false);
     
     //スプライトと剛体を関連付ける
-    sprite->setPhysicsBody(body);
-    
-    //レイヤーにスプライトを追加
-    layer->addChild(sprite, 1);
+    setPhysicsBody(body);
     
     return true;
     

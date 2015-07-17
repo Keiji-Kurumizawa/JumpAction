@@ -20,6 +20,7 @@
 		462B6CFC1B5621FB0027675D /* restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 462B6CF71B5621FB0027675D /* restart.png */; };
 		462B6CFD1B5621FB0027675D /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 462B6CF81B5621FB0027675D /* start.png */; };
 		46407C101B54971B00DED57B /* GameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46407C0E1B54971B00DED57B /* GameOverLayer.cpp */; };
+		46720E371B588B6500B54291 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46720E351B588B6500B54291 /* Player.cpp */; };
 		467960B81B4F51E80074AEC9 /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467960B61B4F51E80074AEC9 /* Global.cpp */; };
 		4681CF331B53550400AC2C2B /* Rock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4681CF311B53550400AC2C2B /* Rock.cpp */; };
 		4681CF351B53835200AC2C2B /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 4681CF341B53835200AC2C2B /* rock.png */; };
@@ -131,6 +132,8 @@
 		462B6CF81B5621FB0027675D /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		46407C0E1B54971B00DED57B /* GameOverLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverLayer.cpp; sourceTree = "<group>"; };
 		46407C0F1B54971B00DED57B /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		46720E351B588B6500B54291 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		46720E361B588B6500B54291 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		467960B61B4F51E80074AEC9 /* Global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Global.cpp; sourceTree = "<group>"; };
 		467960B71B4F51E80074AEC9 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		4681CF311B53550400AC2C2B /* Rock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rock.cpp; sourceTree = "<group>"; };
@@ -355,6 +358,8 @@
 				4681CF321B53550400AC2C2B /* Rock.h */,
 				46407C0E1B54971B00DED57B /* GameOverLayer.cpp */,
 				46407C0F1B54971B00DED57B /* GameOverLayer.h */,
+				46720E351B588B6500B54291 /* Player.cpp */,
+				46720E361B588B6500B54291 /* Player.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -570,6 +575,7 @@
 				46C41D161B4E4A23007B4068 /* GameplayLayer.cpp in Sources */,
 				4681CF331B53550400AC2C2B /* Rock.cpp in Sources */,
 				467960B81B4F51E80074AEC9 /* Global.cpp in Sources */,
+				46720E371B588B6500B54291 /* Player.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				46407C101B54971B00DED57B /* GameOverLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

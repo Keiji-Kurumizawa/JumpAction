@@ -33,16 +33,16 @@ bool BackgroundLayer::init()
     }
     
     //マップファイル1
-    map1 = TMXTiledMap::create("map.tmx");
+    map = TMXTiledMap::create("map.tmx");
 
-    addChild(map1);
+    addChild(map);
     
-    loadObjects(map1, 0);
+    loadObjects(map);
     
     return true;
 }
 
-void BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)
+void BackgroundLayer::loadObjects(TMXTiledMap* map)
 {
     //岩のオブジェクトグループを作成
     auto rockGroup = map->getObjectGroup("rock");
@@ -56,11 +56,8 @@ void BackgroundLayer::loadObjects(TMXTiledMap* map, int mapIndex)
         //オブジェクトのプロパティを取得
         ValueMap objectInfo = object.asValueMap();
         //岩オブジェクト作成
-        auto rock = Rock::create(this, objectInfo.at("x").asFloat() + mapWidth * mapIndex);
+        auto rock = Rock::create(objectInfo.at("x").asFloat());
         
-        //岩オブジェクトのマップインデックスを設定
-        rock->setMapIndex(mapIndex);
-        //岩オブジェクトをリストに追加
-        objects.pushBack(rock);
+        addChild(rock);
     }
 }

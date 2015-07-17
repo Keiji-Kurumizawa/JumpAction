@@ -29,6 +29,10 @@ public:
     static const float g_playerStartX;
     //ステージ横
     static const float g_stageWidth;
+    //ジャンプ量
+    static const float g_jumpPower;
+    //加速
+    static const float g_acceleration;
     
 
 };

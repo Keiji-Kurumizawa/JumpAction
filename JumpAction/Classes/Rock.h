@@ -11,29 +11,15 @@
 
 #include "cocos2d.h"
 
-class Rock : public cocos2d::Node
+class Rock : public cocos2d::Sprite
 {
-private:
-    // スプライト
-    cocos2d::Sprite* sprite;
-    //マップインデックス
-    int mapIndex;
-    
 public:
-    //インスタンスの生成
-    static Rock* create(cocos2d::Layer* layer, float posx);
-    //初期化
-    bool init(cocos2d::Layer* layer, float posX);
-    // get
-    int getMapIndex()
-    {
-        return mapIndex;
-    }
-    // set
-    void setMapIndex(int mapIndex)
-    {
-        this->mapIndex = mapIndex;
-    }
+    
+    static Rock* create(float posx);
+    
+    virtual bool initWithFile(const std::string& filename);
+    
+    bool init(float posX);
 };
 
 #endif //  __ROCK_H__

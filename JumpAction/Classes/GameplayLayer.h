@@ -14,7 +14,6 @@
 
 class GameplayLayer : public cocos2d::Layer
 {
-    float second = 1.0f;
 public:
     // cppにはidがないので、クラスのインスタンスのポインタ返し
     static cocos2d::Scene* createScene();
@@ -26,7 +25,7 @@ public:
     //定期更新
     void update(float delta);
     
-    cocos2d::Sprite* player;
+    cocos2d::Sprite* chara;
 };
 
 #endif // __GAME_PLAY_LAYER_H__

@@ -8,20 +8,14 @@
 
 #include "GameplayLayer.h"
 #include "Global.h"
+#include "Player.h"
 
 using namespace cocos2d;
 
 Scene* GameplayLayer::createScene()
 {
     // 'scene' はautoreleaseオブジェクト
-    //重力判定
-    auto scene = Scene::createWithPhysics();
-    
-    Vect gravity;
-    gravity.setPoint(0, -50);
-    
-    scene->getPhysicsWorld()->setGravity(gravity);
-    scene->getPhysicsWorld()->setSpeed(6.0f);
+    auto scene = Scene::create();
     
     // 'layer' はautoreleaseオブジェクト
     auto layer = GameplayLayer::create();
@@ -40,56 +34,21 @@ bool GameplayLayer::init()
         return false;
     }
     
-    //キャラクターのスプライト作成
-    player = Sprite::create("chara.png");
-    //キャラクターサイズ取得
-    auto playerSize = player->getContentSize();
-    //キャラクター位置設定
-    player->setPosition(Vec2(Global::g_playerStartX, Global::g_groundHeight + playerSize.height / 2.0f));
-    
-    //マテリアル作成
-    auto material = PHYSICSBODY_MATERIAL_DEFAULT;
-    //密度
-    material.density = 1.0f;
-    //反発係数
-    material.restitution = 0.0f;
-    //摩擦係数
-    material.friction = 0.0f;
-    //剛体作成
-    auto body = PhysicsBody::createBox(playerSize, material);
-    //重さの設定
-    body->setMass(1.0f);
-    //回転しない
-    body->setRotationEnable(false);
-    //重力の影響
-    body->setGravityEnable(true);
-    //衝突
-    body->setContactTestBitmask(true);
-    //撃力
-    body->applyImpulse(Vect(100, 0), Point(0, 0));
-    
-    //剛体の設定
-    player->setPhysicsBody(body);
-    
-    //キャラクターの移動
-    auto move = MoveBy::create(second, Vec2(100, 0));
-    auto seq = Sequence::create(move, NULL);
-    auto repeat = RepeatForever::create(seq);
-    //player->runAction(repeat);
+    chara = Player::create();
     
     //ジャンプ設定
     auto menuItemPlay = MenuItemImage::create("jump.png", "jump.png", [this](Ref* sender){
-        if(player->getPositionY() <= Global::g_groundHeight + player->getContentSize().height / 2.0f)
+        if(chara->getPositionY() <= Global::g_groundHeight + chara->getContentSize().height / 2.0f)
         {
-            player->getPhysicsBody()->applyImpulse(Vect(0,200.0f), Point(0, player->getContentSize().height));
+            chara->getPhysicsBody()->applyImpulse(Vect(0,Global::g_jumpPower), Point(0, chara->getContentSize().height));
         }
         return;
     });
     auto menu = Menu::create(menuItemPlay, NULL);
     addChild(menu);
-    
-    addChild(player, 0);
-    
+
+    addChild(chara);
+
     scheduleUpdate();
     
     return true;
@@ -98,13 +57,10 @@ bool GameplayLayer::init()
 void GameplayLayer::update(float delta)
 {
     //プレイヤーの移動設定
-    if(player->getPositionX() > Global::g_stageWidth)
+    if(chara->getPositionX() > Global::g_stageWidth)
     {
-        player->setPosition(Vec2(Global::g_playerStartX, player->getPositionY()));
+        chara->setPosition(Vec2(Global::g_playerStartX, chara->getPositionY()));
         
-        auto move = MoveBy::create(second, Vec2(15, 0));
-        auto seq = Sequence::create(move, NULL);
-        auto repeat = RepeatForever::create(seq);
-        //player->runAction(repeat);
+        chara->getPhysicsBody()->applyImpulse(Vect(Global::g_acceleration, 0));
     }
 }

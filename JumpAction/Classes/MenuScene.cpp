@@ -50,6 +50,7 @@ bool MenuScene::init()
     
     //メニューアイテムの作成
     auto menuItemPlay = MenuItemImage::create("start.png", "start.png", [this](Ref* sender){
+        log("err");
         Director::getInstance()->replaceScene(PlayScene::createScene());
     });
     
